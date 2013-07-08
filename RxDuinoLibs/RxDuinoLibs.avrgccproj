@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>5.0</ProjectVersion>
+    <ProjectGuid>{6f687b3f-df2f-43da-b13d-fac70cbd2a17}</ProjectGuid>
+    <avrdevice>ATmega328P</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>StaticLibrary</OutputType>
+    <Language>CPP</Language>
+    <OutputFile>lib$(MSBuildProjectName).a</OutputFile>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <UseGlobalToolchain>True</UseGlobalToolchain>
+    <ToolchainDirPath>
+    </ToolchainDirPath>
+    <MakeDirPath>
+    </MakeDirPath>
+    <GlobalToolchainPath>C:\Program Files (x86)\Atmel\AVR Tools\AVR Toolchain\bin</GlobalToolchainPath>
+    <AvrGccProjectExtensions>
+    </AvrGccProjectExtensions>
+    <AssemblyName>RxDuinoLibs</AssemblyName>
+    <Name>RxDuinoLibs</Name>
+    <RootNamespace>RxDuinoLibs</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>None</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcccpp.compiler.optimization.DebugLevel>None</avrgcccpp.compiler.optimization.DebugLevel>
+        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+      </AvrGcc>
+    </ToolchainSettings>
+    <MemorySettings>
+    </MemorySettings>
+    <GenerateHexFile>True</GenerateHexFile>
+    <GenerateMapFile>True</GenerateMapFile>
+    <GenerateListFile>True</GenerateListFile>
+    <GenerateEepFile>True</GenerateEepFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+        <avrgcccpp.assembler.debugging.DebugLevel>Default (-g2)</avrgcccpp.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+    <MemorySettings>
+      <MemorySegments>
+        <InitialStack IsEnabled="0">
+          <Address>0x800</Address>
+        </InitialStack>
+      </MemorySegments>
+    </MemorySettings>
+    <GenerateHexFile>True</GenerateHexFile>
+    <GenerateMapFile>True</GenerateMapFile>
+    <GenerateListFile>True</GenerateListFile>
+    <GenerateEepFile>True</GenerateEepFile>
+    <UsesExternalMakeFile>True</UsesExternalMakeFile>
+    <ExternalMakeFilePath>C:\Users\Corei7\Documents\AVRStudio\RxDuino_AVRS\RxDuinoLibs\Debug\Makefile</ExternalMakeFilePath>
+    <OutputDirectory>C:\Users\Corei7\Documents\AVRStudio\RxDuino_AVRS\RxDuinoLibs\Debug</OutputDirectory>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\Downloads\arduino-1.0-windows\arduino-1.0\libraries\EEPROM\EEPROM.cpp">
+      <SubType>compile</SubType>
+      <Link>EEPROM.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Downloads\arduino-1.0-windows\arduino-1.0\libraries\EEPROM\EEPROM.h">
+      <SubType>compile</SubType>
+      <Link>EEPROM.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Downloads\arduino-1.0-windows\arduino-1.0\libraries\MCP2515\MCP2515.cpp">
+      <SubType>compile</SubType>
+      <Link>MCP2515.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Downloads\arduino-1.0-windows\arduino-1.0\libraries\MCP2515\MCP2515.h">
+      <SubType>compile</SubType>
+      <Link>MCP2515.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Downloads\arduino-1.0-windows\arduino-1.0\libraries\MCP2515\MCP2515_defs.h">
+      <SubType>compile</SubType>
+      <Link>MCP2515_defs.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Downloads\arduino-1.0-windows\arduino-1.0\libraries\SPI\SPI.cpp">
+      <SubType>compile</SubType>
+      <Link>SPI.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Downloads\arduino-1.0-windows\arduino-1.0\libraries\SPI\SPI.h">
+      <SubType>compile</SubType>
+      <Link>SPI.h</Link>
+    </Compile>
+    <Compile Include="canbus_message.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="canbus_message.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="can_methods.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="can_methods.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="clock_methods.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="clock_methods.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cruisecontrol_methods.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cruisecontrol_methods.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="debug_methods.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="debug_methods.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="delay_methods.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="delay_methods.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcd_methods.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lcd_methods.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="mil_methods.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="mil_methods.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="program_memory.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="rxduino_defines.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="rxduino_includes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="rxduino_methods.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="rxduino_methods.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tpms_methods.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tpms_methods.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="keywords.txt">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\AvrGCC.targets" />
+</Project>

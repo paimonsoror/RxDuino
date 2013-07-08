@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# AvrStudio Solution File, Format Version 11.00
+Project("{D1100916-62DA-4D80-A9B4-55A1E7CCEEB3}") = "RxDuino", "RxDuino\RxDuino.avrgccproj", "{51BD2827-B238-4D45-9EA3-641330B540EE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6F687B3F-DF2F-43DA-B13D-FAC70CBD2A17} = {6F687B3F-DF2F-43DA-B13D-FAC70CBD2A17}
+	EndProjectSection
+EndProject
+Project("{D1100916-62DA-4D80-A9B4-55A1E7CCEEB3}") = "RxDuinoLibs", "RxDuinoLibs\RxDuinoLibs.avrgccproj", "{6F687B3F-DF2F-43DA-B13D-FAC70CBD2A17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51BD2827-B238-4D45-9EA3-641330B540EE}.Debug|AVR.ActiveCfg = Debug|AVR
+		{51BD2827-B238-4D45-9EA3-641330B540EE}.Debug|AVR.Build.0 = Debug|AVR
+		{51BD2827-B238-4D45-9EA3-641330B540EE}.Release|AVR.ActiveCfg = Release|AVR
+		{51BD2827-B238-4D45-9EA3-641330B540EE}.Release|AVR.Build.0 = Release|AVR
+		{6F687B3F-DF2F-43DA-B13D-FAC70CBD2A17}.Debug|AVR.ActiveCfg = Debug|AVR
+		{6F687B3F-DF2F-43DA-B13D-FAC70CBD2A17}.Debug|AVR.Build.0 = Debug|AVR
+		{6F687B3F-DF2F-43DA-B13D-FAC70CBD2A17}.Release|AVR.ActiveCfg = Release|AVR
+		{6F687B3F-DF2F-43DA-B13D-FAC70CBD2A17}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
