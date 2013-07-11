@@ -186,7 +186,7 @@ void loop(void)
   }
   
   if(txtMsg.compareTo("") != 0) {
-	  parseSerialMessage(txtMsg);
+    parseSerialMessage(txtMsg);
   }
 #endif
 
@@ -194,15 +194,15 @@ void loop(void)
   if(currentMode != OFF && !ccFail) {  
     switch(currentMode) {
       case ECU:
-	  CanbusMessage::getEngineData(currentMonitorPid, engineData, HSCAN);	
-	  LCDMethods::setLcdMessage(currentMonitorText, engineData, MSCAN, currentMode); 
+      CanbusMessage::getEngineData(currentMonitorPid, engineData, HSCAN);	
+      LCDMethods::setLcdMessage(currentMonitorText, engineData, MSCAN, currentMode); 
       break;
       
       case MILES_PER_GAL:
-	  case AVG_MPG:
+      case AVG_MPG:
       if(CanbusMessage::getMilesPerGallon(engineData, avgMpg, currentMode, HSCAN, MSCAN)) {
-		  LCDMethods::setLcdMessage(engineData, MSCAN, currentMode);
-	  }
+	  LCDMethods::setLcdMessage(engineData, MSCAN, currentMode);
+      }
       break;
       
       case WHEEL_SPEED:
@@ -225,21 +225,21 @@ void loop(void)
       break;
       
       case ASK_CLOCK:
-	  ClockMethods::getInitialClock(MSCAN);
-	  break;
+      ClockMethods::getInitialClock(MSCAN);
+      break;
 	  
-	  case SET_CLOCK:
-	  ClockMethods::setClock(MSCAN);
+      case SET_CLOCK:
+      ClockMethods::setClock(MSCAN);
       currentMode = ASK_CLOCK;
       break;
       
       case CEL:
-	  MILMethods::getMILData(HSCAN, MSCAN, milCode);
+      MILMethods::getMILData(HSCAN, MSCAN, milCode);
       break;
 	  
-	  case MIL_CLEAR:
-	  LCDMethods::setLcdMessage("ClrMIL(DN)", MSCAN, currentMode);
-	  break;
+      case MIL_CLEAR:
+      LCDMethods::setLcdMessage("ClrMIL(DN)", MSCAN, currentMode);
+      break;
          
       case RESPONSE_TIME:
       char buf[5];
@@ -313,18 +313,18 @@ void readCruiseControlSwitch(void) {
       if(CruiseControlMethods::getCCButton(message, HSCAN)) {
         boolean buttonPressed = false;
 		
-		// The cruise control can be held down so lets make sure
-		// that this is not a hold down and just a single press
-		if(message.data[4] != CC_CNCL && lastButtonPressedCnt != 0) {
-			joystickHandler(RIGHT, buttonPressed);
-			lastButtonPressedCnt = 0;
-			holdDownDone = true;
-			Serial.println("Timer Ended");
-		}	
+	// The cruise control can be held down so lets make sure
+	// that this is not a hold down and just a single press
+	if(message.data[4] != CC_CNCL && lastButtonPressedCnt != 0) {
+		joystickHandler(RIGHT, buttonPressed);
+		lastButtonPressedCnt = 0;
+		holdDownDone = true;
+		Serial.println("Timer Ended");
+	}	
         
         // Read data
         switch(message.data[4]) {
-			case CC_UP: // up
+	    case CC_UP: // up
             DebugMethods::serialDebug("CC Up Pressed", true);
             joystickHandler(UP,    buttonPressed);
             break; 
@@ -334,22 +334,22 @@ void readCruiseControlSwitch(void) {
             break;
             case CC_CNCL: // cancel
             DebugMethods::serialDebug("CC Cancel Pressed", true);
-			if (lastButtonPressedCnt == 0) {      // check if continued press
-				lastButtonPressedCnt = millis();  // if not, set timer
-				Serial.println("Timer Started");
-				holdDownDone = false;
-			} else if ((millis() - lastButtonPressedCnt) > 1000 && !holdDownDone) { // if so, check if long ennough
-				Serial.println("Button Held Down");
-				joystickHandler(CLICK, buttonPressed);
-				holdDownDone = true;
-				lastButtonPressedCnt = 0;
-			} // else ignore
+	    if (lastButtonPressedCnt == 0) {      // check if continued press
+		lastButtonPressedCnt = millis();  // if not, set timer
+		Serial.println("Timer Started");
+		holdDownDone = false;
+	    } else if ((millis() - lastButtonPressedCnt) > 1000 && !holdDownDone) { // if so, check if long ennough
+		Serial.println("Button Held Down");
+		joystickHandler(CLICK, buttonPressed);
+		holdDownDone = true;
+		lastButtonPressedCnt = 0;
+	    } // else ignore
             break;
         }
       
-	    if(buttonPressed)
-		  delay(125);
-	  }
+	if(buttonPressed)
+	    delay(125);
+	}
 		
     } else {
       DebugMethods::serialDebug("Cruise Control Is On, Buttons Disabled", true);
